@@ -26,4 +26,3 @@ disabled-strategies = ["quick-install"]
 
 [package.metadata.binstall.overrides.x86_64-pc-windows-msvc]
 pkg-fmt = "zip"
-
