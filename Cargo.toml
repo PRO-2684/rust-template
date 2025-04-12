@@ -14,9 +14,9 @@ authors = ["{{username}}"]
 [dependencies]
 
 [profile.release]
-strip = true  # Automatically strip symbols from the binary.
-lto = true  # Enable link-time optimization.
-codegen-units = 1  # Set the number of codegen units to 1.
+strip = true      # Automatically strip symbols from the binary.
+lto = true        # Enable link-time optimization.
+codegen-units = 1 # Set the number of codegen units to 1.
 
 [package.metadata.binstall]
 pkg-url = "{ repo }/releases/download/v{ version }/{ name }-v{ version }-{ target }{ archive-suffix }"

@@ -3,6 +3,7 @@ alias r := run
 alias t := test
 alias v := version
 
+# List available recipes
 default:
     just --list
 
