@@ -7,9 +7,9 @@ description = "{{project-description}}"
 keywords = []
 categories = []
 include = ["src", "README.md", "LICENSE"]
-repository = "https://github.com/{{gh-username}}/{{project-name}}"
+repository = "https://github.com/{{username}}/{{project-name}}"
 license = "MIT"
-authors = ["{{gh-username}}"]
+authors = ["{{username}}"]
 
 [dependencies]
 
