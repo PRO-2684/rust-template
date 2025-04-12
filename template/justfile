@@ -3,6 +3,7 @@ alias r := run
 alias t := test
 alias v := version
 
+{% raw %}
 # List available recipes
 default:
     just --list
@@ -43,3 +44,4 @@ set-version VERSION:
     git commit -S -m "Bump version to v{{VERSION}}"
     # Tag version
     git tag -s v{{VERSION}} -m "Version v{{VERSION}}"
+{% endraw %}
