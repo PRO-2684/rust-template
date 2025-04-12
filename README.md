@@ -64,23 +64,20 @@ You can then push the commit and tag to the remote repository, which will trigge
 
     Your [username](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html?highlight=username) will be automatically determined by `cargo-generate`.
 
-4. After the project is generated, consider filling out `keywords` and `categories` in `Cargo.toml`, and updating the README.
-5. In order for [automatic releases](#-automatic-releases) to work, you need to:
-    
-    1. Create a new GitHub repository with the **same name** as your project
-    2. Push the generated project to the new repository
-    3. Enable GitHub Actions for the repository, and grant "Read and write permissions" to the workflow (Required for publishing GitHub releases)
-    4. Provide `CARGO_TOKEN` repository secret, with enough permissions to publish your crate to crates.io
+4. After the project is generated, consider filling (or commenting) out `keywords` and `categories` in `Cargo.toml`.
+5. In order for [automatic releases](#-automatic-releases) to work, you need to follow the steps in *Automatic Releases Setup* section in the **generated** `README.md` file.
+
+An example project can be found [here](https://github.com/PRO-2684/rust-template-example).
 
 ## ✅ TODO
 
-- [ ] Showcase an example project generated using this template
+- [x] Showcase an example project generated using this template
     - [ ] Auto sync with this template using GitHub Actions
 - [ ] Allow for specifying crate type
     - [ ] `bin`: Only `main.rs` will be generated (default, when `--bin` flag is used)
     - [ ] `lib`: Only `lib.rs` will be generated (when `--lib` flag is used)
     - [ ] `mixed`: Both `main.rs` and `lib.rs` will be generated (current, how to specify this?)
     - Workspace not planned yet
-- [ ] Allow for multiple binaries and their `name` fields
-- [ ] Allow for specifying whether to sign commits and tags
 - [ ] Generate `cli` feature, if the crate type is `mixed`
+- [ ] Allow for specifying whether to sign commits and tags
+- [ ] Allow for multiple binaries and their `name` fields
