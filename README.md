@@ -64,7 +64,8 @@ You can then push the commit and tag to the remote repository, which will trigge
 
     Your [username](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html?highlight=username) will be automatically determined by `cargo-generate`.
 
-4. In order for [automatic releases](#-automatic-releases) to work, you need to:
+4. After the project is generated, consider filling out `keywords` and `categories` in `Cargo.toml`, and updating the README.
+5. In order for [automatic releases](#-automatic-releases) to work, you need to:
     
     1. Create a new GitHub repository with the **same name** as your project
     2. Push the generated project to the new repository
@@ -81,4 +82,5 @@ You can then push the commit and tag to the remote repository, which will trigge
     - [ ] `mixed`: Both `main.rs` and `lib.rs` will be generated (current, how to specify this?)
     - Workspace not planned yet
 - [ ] Allow for multiple binaries and their `name` fields
+- [ ] Allow for specifying whether to sign commits and tags
 - [ ] Generate `cli` feature, if the crate type is `mixed`
