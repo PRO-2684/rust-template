@@ -10,7 +10,7 @@
 
 {{project-description}}
 
-## Installation
+## 📥 Installation
 
 ### Using [`binstall`](https://github.com/cargo-bins/cargo-binstall)
 
@@ -28,15 +28,14 @@ Navigate to the [Releases page](https://github.com/{{username}}/{{project-name}}
 cargo install {{project-name}}
 ```
 
-## Examples
+## 💡 Examples
 
 TODO
 
-## Usage
+## 📖 Usage
 
 TODO
 
-## Credits
+## 🎉 Credits
 
 TODO
-
