@@ -1,3 +1,10 @@
+//! # `{{project-name}}` library crate
+//!
+//! If you are reading this, you are reading the documentation for the `{{project-name}}` library crate. For the cli, kindly refer to the README file.
+
+#![deny(missing_docs)]
+#![warn(clippy::all, clippy::nursery, clippy::pedantic, clippy::cargo)]
+
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }

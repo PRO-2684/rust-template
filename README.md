@@ -10,10 +10,9 @@
 
 {{project-description}}
 
-
 ## Installation
 
-### Using `binstall`
+### Using [`binstall`](https://github.com/cargo-bins/cargo-binstall)
 
 ```shell
 cargo binstall {{project-name}}
