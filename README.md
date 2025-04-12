@@ -50,6 +50,8 @@ You can then push the commit and tag to the remote repository, which will trigge
 
 ## 🤔 Usage
 
+### ✨ Creating a New Project
+
 1. [Setup `cargo-generate`](https://github.com/cargo-generate/cargo-generate/#installation) on your machine.
 2. Run the following command to create a new project from this template:
 
@@ -59,8 +61,8 @@ You can then push the commit and tag to the remote repository, which will trigge
 
 3. Follow the prompts to set up your project. You'll be asked for:
 
-   - Project name
-   - Project description
+   - Project name (`project-name`)
+   - Project description (`project-description`)
 
     Your [username](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html?highlight=username) will be automatically determined by `cargo-generate`.
 
@@ -68,6 +70,16 @@ You can then push the commit and tag to the remote repository, which will trigge
 5. In order for [automatic releases](#-automatic-releases) to work, you need to follow the steps in *Automatic Releases Setup* section in the **generated** `README.md` file.
 
 An example project can be found [here](https://github.com/PRO-2684/rust-template-example).
+
+### ➕ On an Existing Project
+
+Currently you'll have to copy and modify the files manually. Here's a list of files that might be useful:
+
+- [`release.yml`](./template/.github/workflows/release.yml): The GitHub Actions workflow for automatic releases
+- [`justfile`](./template/justfile): The `just` config file for handy commands
+- [`README.md`](./template/README.md): The README file, including badges and project description
+
+You have to replace `{{project-name}}` & `{{project-description}}` accordingly, and remove `{% raw %}` & `{% endraw %}` template tags.
 
 ## ✅ TODO
 
