@@ -4,6 +4,7 @@ on:
   push:
     tags:
     - "v*"
+  workflow_dispatch:
 
 jobs:
   sync-example:
@@ -21,6 +22,8 @@ jobs:
         fetch-depth: 1
         fetch-tags: true
         path: rust-template
+        # https://github.com/actions/checkout/issues/1467
+        ref: ${{ github.ref }}
 
     - name: Checkout example repository
       uses: actions/checkout@v4
