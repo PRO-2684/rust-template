@@ -64,7 +64,7 @@ You can then push the commit and tag to the remote repository, which will trigge
    - Project name (`project-name`)
    - Project description (`project-description`)
 
-    Your [username](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html?highlight=username) will be automatically determined by `cargo-generate`.
+    Your [username](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html?highlight=username) will be automatically determined by `cargo-generate`, usually via `user.name` in your Git config. So make sure it matches your GitHub username.
 
 4. After the project is generated, consider filling (or commenting) out `keywords` and `categories` in `Cargo.toml`.
 5. In order for [automatic releases](#-automatic-releases) to work, you need to follow the steps in *Automatic Releases Setup* section in the **generated** `README.md` file.
