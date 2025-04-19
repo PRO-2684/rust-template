@@ -84,7 +84,7 @@ You have to replace `{{project-name}}` & `{{project-description}}` accordingly, 
 ## ✅ TODO
 
 - [x] Showcase an example project generated using this template
-    - [ ] Auto sync with this template using GitHub Actions
+    - [x] Auto sync with this template using GitHub Actions
 - [ ] Allow for specifying crate type
     - [ ] `bin`: Only `main.rs` will be generated (default, when `--bin` flag is used)
     - [ ] `lib`: Only `lib.rs` will be generated (when `--lib` flag is used)

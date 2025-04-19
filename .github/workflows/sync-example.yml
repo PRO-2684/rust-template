@@ -42,6 +42,9 @@ jobs:
         rm -rf !(.git|.|..)
         shopt -u extglob dotglob # Keep safe
 
+        # Set git username to myself
+        git config --global user.name "PRO-2684"
+
         # Generate the example using the template
         cargo generate --path ../rust-template --init -n rust-template-example --template-values-file ../rust-template/example/values.toml
 
