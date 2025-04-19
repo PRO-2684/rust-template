@@ -48,20 +48,19 @@ jobs:
         # Generate the example using the template
         cargo generate --path ../rust-template --init -n rust-template-example --template-values-file ../rust-template/example/values.toml
 
-    - name: Set version
+    - name: Update example
       run: |
+        # Update the version in the example's Cargo.toml
         cd rust-template
         VERSION=$(git describe --tags --abbrev=0 | sed 's/^v//')
         cd ../rust-template-example
         sed -i "s/^version = \".*\"/version = \"${VERSION}\"/" Cargo.toml
 
-    - name: Commit and push changes
-      run: |
-        cd rust-template-example
+        # Commit and push the changes
         git config user.name "GitHub Action"
         git config user.email "actions@github.com"
         git add .
-        git commit -m "Sync example with rust-template"
+        git commit -m "Sync example with rust-template@v${VERSION}"
         git tag -a "v${VERSION}" -m "Release v${VERSION}"
         git push
         git push origin tag "v${VERSION}"
