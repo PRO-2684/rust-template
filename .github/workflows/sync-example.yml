@@ -1,1 +1,61 @@
-# rm -rf Cargo.lock Cargo.toml .github/ .gitignore justfile LICENSE README.md src/ target/ tests/ && cargo generate PRO-2684/rust-template --init
+name: "sync-example"
+
+on:
+  push:
+    tags:
+    - "v*"
+
+jobs:
+  sync-example:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install cargo-binstall
+      uses: cargo-bins/cargo-binstall@v1.12.3
+
+    - name: Install cargo-generate
+      run: cargo binstall cargo-generate --no-confirm
+
+    - name: Checkout current repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        fetch-tags: true
+        path: rust-template
+
+    - name: Checkout example repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+        ssh-key: ${{ secrets.DEPLOY_KEY }}
+        repository: PRO-2684/rust-template-example
+        path: rust-template-example
+
+    - name: Generate example
+      run: |
+        cd rust-template-example
+
+        # Remove everything except the .git directory
+        shopt -s extglob dotglob
+        rm -rf !(.git|.|..)
+        shopt -u extglob dotglob # Keep safe
+
+        # Generate the example using the template
+        cargo generate --path ../rust-template --init -n rust-template-example --template-values-file ../rust-template/example/values.toml
+
+    - name: Set version
+      run: |
+        cd rust-template
+        VERSION=$(git describe --tags --abbrev=0 | sed 's/^v//')
+        cd ../rust-template-example
+        sed -i "s/^version = \".*\"/version = \"${VERSION}\"/" Cargo.toml
+
+    - name: Commit and push changes
+      run: |
+        cd rust-template-example
+        git config user.name "GitHub Action"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "Sync example with rust-template"
+        git tag -a "v${VERSION}" -m "Release v${VERSION}"
+        git push
+        git push origin tag "v${VERSION}"
