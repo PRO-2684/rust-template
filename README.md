@@ -14,19 +14,19 @@ When a tag starting with `v` is pushed to the repository, the `tagged-release` w
 - Upload the binaries to the release
 - Publish the crate to crates.io
 
-### 🤖 Justfile
+### 🤖 `jiu` configuration
 
 > [!NOTE]
-> This section assumes that you're developing on Linux, and have [`just`](https://github.com/casey/just) installed.
+> This section assumes that you're developing on Linux, and have [`jiu`](https://github.com/PRO-2684/jiu) installed.
 
 Provides a few handy commands, including:
 
-- `just b`/`just build`: Build the release binary
-- `just r`/`just run`: Compile and run the project
-- `just t`/`just test`: Run tests
-- `just v`/`just version`: Set or get version
+- `jiu b`/`jiu build`: Build the release binary
+- `jiu r`/`jiu run`: Compile and run the project, with additional arguments passed to the binary
+- `jiu t`/`jiu test`: Run tests, with additional arguments passed to `cargo test`
+- `jiu v`/`jiu version`: Set or get version, see below
 
-The `just v` command, without additional arguments, will print the current version of the project. If a version is provided, e.g. `just v 0.1.1`, it will set the version to `0.1.1`. To be specific, it will:
+The `jiu v` command, without additional arguments, will print the current version of the project. If a version is provided, e.g. `jiu v 0.1.1`, it will set the version to `0.1.1`. To be specific, it will:
 
 1. Update `version` in `Cargo.toml`
 2. Update `Cargo.lock` (`cargo update`)
