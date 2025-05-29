@@ -21,7 +21,7 @@
     - `Scopes`: `publish-new`, `publish-update`
     - `Crates`: `{{project-name}}`
 
-4. [Add a repository secret](https://github.com/{{username}}/{{project-name}}/settings/secrets/actions) named `CARGO_TOKEN` with the generated token as its value.
+4. [Add a repository secret](https://github.com/{{username}}/{{project-name}}/settings/secrets/actions/new) named `CARGO_TOKEN` with the generated token as its value.
 5. Consider removing this section and updating this README with your own project information.
 
 ## 📥 Installation
