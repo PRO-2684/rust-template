@@ -24,6 +24,17 @@
 4. [Add a repository secret](https://github.com/{{username}}/{{project-name}}/settings/secrets/actions/new) named `CARGO_TOKEN` with the generated token as its value.
 5. Consider removing this section and updating this README with your own project information.
 
+[Trusted Publishing](https://crates.io/docs/trusted-publishing) is a recent feature added to crates.io. To utilize it, first make sure you've already successfully published the crate to crates.io. Then, follow these steps:
+
+1. [Add a new trusted publisher](https://crates.io/crates/{{project-name}}/settings/new-trusted-publisher) to your crate.
+    - Set "Workflow filename" to `release.yml`.
+    - Keep other fields intact.
+    - Click "Add".
+2. Modify [`release.yml`](.github/workflows/release.yml).
+    1. Comment out or remove the `publish-release` job.
+    2. Un-comment the `trusted-publishing` job.
+3. Remove the `CARGO_TOKEN` [repository secret](https://github.com/{{username}}/{{project-name}}/settings/secrets/actions).
+
 ## 📥 Installation
 
 ### Using [`binstall`](https://github.com/cargo-bins/cargo-binstall)
