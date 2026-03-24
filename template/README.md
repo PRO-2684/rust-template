@@ -34,6 +34,7 @@
     1. Comment out or remove the `publish-release` job.
     2. Un-comment the `trusted-publishing` job.
 3. Remove the `CARGO_TOKEN` [repository secret](https://github.com/{{username}}/{{project-name}}/settings/secrets/actions).
+4. Revoke the API token on [crates.io](https://crates.io/settings/tokens).
 
 ## 📥 Installation
 
